@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Bookshelf Apps</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Font awesome -->
+    <script src="https://kit.fontawesome.com/0cfa052efb.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="greeting-section">
+        <p id="currentDate"></p>
+        <h3 id="greetingMessage"></h3>
+      </div>
+      <div class="my-account">
+        <div>
+          <p>Welcome</p>
+          <h3>Alif Ahmad Mukhtar D.H.</h3>
+        </div>
+        <img src="assets/Alif Ahmad.jpg" alt="" />
+      </div>
+    </header>
+    <main>
+      <div class="col_information">
+        <h2>Bookself Stats</h2>
+        <ul class="stat-list">
+          <li>
+            <div>
+              <h4>Total Buku</h4>
+              <p id="book-total">0</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h4>Selesai Dibaca</h4>
+              <p id="completed-total">0</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h4>Belum Selesai</h4>
+              <p id="incompleted-total">0</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="col_book_shelf">
+        <section class="add_search_section">
+          <div class="add">
+            <div>
+              <div class="add_button_wrapper">
+                <button class="add_book_button"><i class="fa-solid fa-plus" style="color: #ffffff"></i></button>
+                <h5>add</h5>
+              </div>
+            </div>
+          </div>
+          <div class="search">
+            <h2>Cari Buku</h2>
+            <form id="searchBook">
+              <input id="searchBookTitle" type="text" placeholder="Judul" />
+              <button id="searchSubmit" type="submit"><i class="fa-solid fa-magnifying-glass" style="color: #ffffff"></i></button>
+            </form>
+          </div>
+        </section>
+
+        <section class="book_shelf_section">
+          <div class="book_shelf">
+            <div class="status-text">
+              <h5>Belum selesai dibaca</h5>
+            </div>
+
+            <div id="incompleteBookshelfList" class="book_list"></div>
+          </div>
+
+          <div class="book_shelf">
+            <div class="status-text">
+              <h5>Selesai dibaca</h5>
+            </div>
+            <div id="completeBookshelfList" class="book_list"></div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Modals -->
+    <div class="input_modal_container">
+      <div class="input_modal">
+        <h2>Masukkan Buku Baru</h2>
+        <form id="inputBook">
+          <div class="input">
+            <input id="inputBookTitle" type="text" name="bookTitle" placeholder="Judul" required />
+          </div>
+          <div class="input">
+            <input id="inputBookAuthor" type="text" name="bookAuthor" placeholder="Penulis" required />
+          </div>
+          <div class="input">
+            <input id="inputBookYear" type="number" name="bookYear" placeholder="Tahun" required />
+          </div>
+          <div class="input_inline">
+            <input id="inputBookIsComplete" type="checkbox" name="bookIsComplete" />
+            <label for="inputBookIsComplete">Selesai dibaca</label>
+          </div>
+          <button id="bookSubmit" type="submit">Masukkan Buku ke rak <span id="span-select-status">Belum selesai dibaca</span></button>
+          <button id="cancelSubmit" type="reset">Cancel</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="deleteBookModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="close-modal">&times;</span>
+        <p>Apakah Anda yakin ingin menghapus buku ini?</p>
+        <button id="confirmDelete">Ya</button>
+        <button id="cancelDelete">Tidak</button>
+      </div>
+    </div>
+
+    <script src="/js/main.js"></script>
+  </body>
+</html>
